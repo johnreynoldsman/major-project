@@ -13,3 +13,5 @@ function setup() {
 function draw() {
   background(220);
 }
+// board is 10 wide and 20 tall 
+// the blocks are red, green, line, square, almost plus, L, backwards L
