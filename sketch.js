@@ -6,8 +6,8 @@
 // - describe what you did to take this project "above and beyond"
 const cellsize = 40;
 let blacktile = 1;
-let x = 10;
-let y = 20;
+let c = 20;
+let r = 10;
 let red_block = [
   [1,1,0],
   [0,1,1]
@@ -15,8 +15,8 @@ let red_block = [
 let grid = [
   [0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
-  [0,0,1,1,0,0,0,0,0,0],
-  [0,0,0,1,1,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
@@ -40,17 +40,22 @@ function setup() {
 
 function draw() {
   background(220);
-  for(let x = 0; x <= 10; x++){
-    for(let y = 0; y <= 20; y++){
+  showGrid();
+}
+function showGrid(){
+  for(let y = 0; y < c; y++){
+    for(let x = 0; x < r; x++){
       square(x * cellsize, y * cellsize, cellsize);
+      if(grid[y][x] === 1){
+        fill("black");
+      }
+      else if(grid[y][x] === 0){
+        fill("white");
+      }
+      grid.push(red_block);
     }
   }
-  if (keyIsDown(65)){
-    grid.push(red_block);
-    console.log(red_block, x, y);
-  }
 }
-
 
 // board is 10 wide and 20 tall 
 // the blocks are red, green, line, square, almost plus, L, backwards L
