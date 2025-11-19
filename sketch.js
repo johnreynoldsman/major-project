@@ -50,15 +50,11 @@ function draw() {
     console.log(red_block, x, y);
   }
 }
-function changeColor(){
-  if (grid(x, y) === 1){
-    fill ('black');
-  }
-}
+
 
 // board is 10 wide and 20 tall 
 // the blocks are red, green, line, square, almost plus, L, backwards L
-//block presets will be like 0,1,1,1,1,0,0,0,0,0 (line block)
+//block presets will be like 0,0,0,1,1,1,1,0,0,0 (line block)
 //to move blocks will be to add and subtract 
 //rotating will be dificcult but it will pretty much be reseting the preset at a different angle
 //if a row is all 1's then it dissapears and every row moves down one 
