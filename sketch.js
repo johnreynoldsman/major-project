@@ -6,7 +6,8 @@
 // - describe what you did to take this project "above and beyond"
 
 const cellsize = 40;
-let blacktile = 1;
+let y;
+let x;
 let c = 20;
 let r = 10;
 let line_block = [
@@ -46,10 +47,10 @@ function showGrid(){
   for(let y = 0; y < c; y ++){
     for(let x = 0; x < r; x ++){
       rect(x * cellsize, y * cellsize, cellsize);
-      if(grid[y][x] === 1){
+      if(grid[y][x] === 0){
         fill("black");
       }
-      else if(grid[y][x] === 0){
+      else if(grid[y][x] === 1){
         fill("white");
       }
     }
