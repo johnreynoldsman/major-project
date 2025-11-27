@@ -44,18 +44,21 @@ function draw() {
   showGrid();
 }
 function showGrid(){
-  for(let y = 0; y < c; y ++){
-    for(let x = 0; x < r; x ++){
+  for(let x = 0; x < r; x ++){
+    for(let y = 0; y < c; y ++){
       rect(x * cellsize, y * cellsize, cellsize);
-      if(grid[y][x] === 0){
+      if(grid[y][x] === 1){
         fill("black");
       }
-      else if(grid[y][x] === 1){
+      else if(grid[y][x] === 0){
         fill("white");
       }
     }
   }
 }
+
+//somehow flip the x and y axis i dont know how that happened but atleast it makes sense now
+
 
 // board is 10 wide and 20 tall 
 // the blocks are red, green, line, square, almost plus, L, backwards L
