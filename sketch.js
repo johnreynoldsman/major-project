@@ -8,11 +8,11 @@
 const cellsize = 40;
 let y;
 let x;
-let c = 20;
-let r = 10;
-let line_block = [
-  [0,0,0,1,1,1,1,0,0,0],
-];
+let cols = 20;
+let rows = 10;
+let hero = 
+  [0,0,0,1,1,1,1,0,0,0]
+;
 let grid = [
   [1,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
@@ -32,8 +32,8 @@ let grid = [
   [0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,1],
-  [0,0,0,0,0,0,0,0,0,1]
+  [0,0,0,0,0,0,0,1,0,1],
+  [0,0,0,0,0,0,0,0,1,0]
 ];
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -44,8 +44,8 @@ function draw() {
   showGrid();
 }
 function showGrid(){
-  for(let x = 0; x < r; x ++){
-    for(let y = 0; y < c; y ++){
+  for(let x = 0; x < rows ; x ++){
+    for(let y = 0; y < cols; y ++){
       rect(x * cellsize, y * cellsize, cellsize);
       if(grid[y][x] === 1){
         fill("black");
@@ -57,12 +57,11 @@ function showGrid(){
   }
 }
 
-//somehow flip the x and y axis i dont know how that happened but atleast it makes sense now
 
 
 // board is 10 wide and 20 tall 
-// the blocks are red, green, line, square, almost plus, L, backwards L
+// the blocks are S "Rhode island Z", Z "Cleveland Z", line"Hero", square "Smash boy", almost plus "Teewee", L "Orange Ricky", J "Blue Ricky"
 //block presets will be like 0,0,0,1,1,1,1,0,0,0 (line block)
-//to move blocks will be to add and subtract 
-//rotating will be dificcult but it will pretty much be reseting the preset at a different angle
+//to move blocks will be to add and subtract on the x axis
+//rotating will be dificcult but it will pretty much be reseting the preset at a different angle make sure it doesnt collide with other things
 //if a row is all 1's then it dissapears and every row moves down one 
