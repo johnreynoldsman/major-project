@@ -8,8 +8,8 @@
 const cellsize = 40;
 let y;
 let x;
-let cols = 20;
-let rows = 10;
+let cols = 10;
+let rows = 20;
 let hero = 
   [0,0,0,1,1,1,1,0,0,0]
 ;
@@ -44,8 +44,8 @@ function draw() {
   showGrid();
 }
 function showGrid(){
-  for(let x = 0; x < rows ; x ++){
-    for(let y = 0; y < cols; y ++){
+  for(let y = 0; y < rows; y ++){
+    for(let x = 0; x < cols ; x ++){
       rect(x * cellsize, y * cellsize, cellsize);
       if(grid[y][x] === 1){
         fill("black");
@@ -60,8 +60,8 @@ function showGrid(){
 
 
 // board is 10 wide and 20 tall 
-// the blocks are S "Rhode island Z", Z "Cleveland Z", line"Hero", square "Smash boy", almost plus "Teewee", L "Orange Ricky", J "Blue Ricky"
+// the blocks are S "Rhode island Z", Z "Cleveland Z", line "Hero", square "Smash boy", almost plus "Teewee", L "Orange Ricky", J "Blue Ricky"
 //block presets will be like 0,0,0,1,1,1,1,0,0,0 (line block)
 //to move blocks will be to add and subtract on the x axis
-//rotating will be dificcult but it will pretty much be reseting the preset at a different angle make sure it doesnt collide with other things
+//rotating will be dificult but it will pretty much be reseting the preset at a different angle make sure it doesnt collide with other things
 //if a row is all 1's then it dissapears and every row moves down one 
