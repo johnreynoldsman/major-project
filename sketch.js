@@ -10,11 +10,16 @@ let y;
 let x;
 let cols = 10;
 let rows = 20;
-let hero = 
+let Hero = 
   [0,0,0,1,1,1,1,0,0,0]
 ;
+let Teewee = 
+  [0,0,0,0,1,0,0,0,0,0]
+    [0,0,0,1,1,1,0,0,0,0];
+let Smashboy = 
+  [0,0,0,0,1,1,0,0,0,0]
+    [0,0,0,0,1,1,0,0,0,0];
 let grid = [
-  [1,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
@@ -32,8 +37,9 @@ let grid = [
   [0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,1,0,1],
-  [0,0,0,0,0,0,0,0,1,0]
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0]
 ];
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -46,13 +52,13 @@ function draw() {
 function showGrid(){
   for(let y = 0; y < rows; y ++){
     for(let x = 0; x < cols ; x ++){
-      rect(x * cellsize, y * cellsize, cellsize);
       if(grid[y][x] === 1){
         fill("black");
       }
       else if(grid[y][x] === 0){
         fill("white");
       }
+      rect(x * cellsize, y * cellsize, cellsize);
     }
   }
 }
