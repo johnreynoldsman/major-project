@@ -64,9 +64,6 @@ function showGrid(){
 }
 
 
-
-// board is 10 wide and 20 tall 
-// the blocks are S "Rhode island Z", Z "Cleveland Z", line "Hero", square "Smash boy", almost plus "Teewee", L "Orange Ricky", J "Blue Ricky"
 //block presets will be like 0,0,0,1,1,1,1,0,0,0 (line block)
 //to move blocks will be to add and subtract on the x axis
 //rotating will be dificult but it will pretty much be reseting the preset at a different angle make sure it doesnt collide with other things
