@@ -48,6 +48,7 @@ function setup() {
 function draw() {
   background(220);
   showGrid();
+  grid.splice(0, 2, Smashboy);
 }
 function showGrid(){
   for(let y = 0; y < rows; y ++){
