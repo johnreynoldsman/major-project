@@ -15,22 +15,22 @@ let Hero =
   [[0,0,0,1,1,1,1,0,0,0]];
 let Teewee = 
   [[0,0,0,0,1,0,0,0,0,0],
-   [0,0,0,1,1,1,0,0,0,0]];
+    [0,0,0,1,1,1,0,0,0,0]];
 let Smashboy = 
   [[0,0,0,0,1,1,0,0,0,0],
-   [0,0,0,0,1,1,0,0,0,0]];
+    [0,0,0,0,1,1,0,0,0,0]];
 let rhodeIslandZ = 
   [[0,0,0,0,0,1,1,0,0,0],
-   [0,0,0,0,1,1,0,0,0,0]];
-let clevelndZ = 
+    [0,0,0,0,1,1,0,0,0,0]];
+let clevelandZ = 
   [[0,0,0,1,1,0,0,0,0,0],
-   [0,0,0,0,1,1,0,0,0,0]];
+    [0,0,0,0,1,1,0,0,0,0]];
 let orangeRicky = 
   [[0,0,0,1,1,1,0,0,0,0],
-   [0,0,0,1,0,0,0,0,0,0]];
+    [0,0,0,1,0,0,0,0,0,0]];
 let blueRicky = 
   [[0,0,0,1,1,1,0,0,0,0],
-   [0,0,0,0,0,1,0,0,0,0]];
+    [0,0,0,0,0,1,0,0,0,0]];
 let grid = [
   [0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0],
@@ -61,8 +61,8 @@ function setup() {
 function draw() {
   background(220);
   showGrid();
+  blocksFall(grid, Smashboy);
   // grid.splice(0, 2, Smashboy);
-  
 }
 function showGrid(){
   for(let y = 0; y < rows; y ++){
@@ -95,7 +95,8 @@ function copyStuff(grid, thingToPutIn) {
     }
   }
 }
-function blocksFall(){
+function blocksFall(grid, thingToPutIn){
   for (let location = 0; location < rows; location += dy){
+    copyStuff(grid, thingToPutIn);
   }
 }
