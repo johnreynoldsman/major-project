@@ -55,7 +55,7 @@ let grid = [
 ];
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  copyStuff(grid, rhodeIslandZ);
+  //copyStuff(grid, rhodeIslandZ);
 }
 
 function draw() {
@@ -83,7 +83,8 @@ function showGrid(){
 //rotating will be difficult but it will pretty much be reseting the preset at a different angle make sure it does'nt collide with other things
 //if a column is all 1's then it dissapears and every column moves down one 
 
-//edit mr schellenberg's code to move the blocks down everyonce in awhile
+//edit mr schellenberg's code possibly to move the blocks down everyonce in awhile
+//acctually make the blocks fall when pressing a button then make it fall without the button and faster with the button 
 
 
 //Mr schellenberg made this function for me...
