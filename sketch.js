@@ -8,6 +8,7 @@
 const cellsize = 40;
 let y;
 let dy = 1;
+let dropper = 10;
 let x;
 let cols = 10;
 let rows = 20;
@@ -55,13 +56,13 @@ let grid = [
 ];
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  //copyStuff(grid, rhodeIslandZ);
+  copyStuff(grid, rhodeIslandZ);
 }
 
 function draw() {
   background(220);
   showGrid();
-  blocksFall(grid, Smashboy);
+  //blocksFall(grid, Smashboy);
   // grid.splice(0, 2, Smashboy);
 }
 function showGrid(){
@@ -96,8 +97,14 @@ function copyStuff(grid, thingToPutIn) {
     }
   }
 }
-function blocksFall(grid, thingToPutIn){
-  for (let location = 0; location < rows; location += dy){
-    copyStuff(grid, thingToPutIn);
+// function blocksFall(grid, thingToPutIn){
+//   for (let location = 0; location < rows; location += dy){
+//     copyStuff(grid, thingToPutIn);
+//   }
+// }
+// trying to make the blocks fall still figure out what i have to change to get the blocks to move
+function keyTyped(){
+  if (key === 'd'){
+    dropper +=1 ;
   }
 }
