@@ -6,10 +6,12 @@
 // - describe what you did to take this project "above and beyond"
 
 const cellsize = 40;
+let interval = setInterval(dropBlock, 500);
 let y;
 let dy = 1;
-let dropper = 10;
+//let dropper = 10;
 let x;
+let i = 0;
 let cols = 10;
 let rows = 20;
 let Hero = 
@@ -79,7 +81,6 @@ function showGrid(){
   }
 }
 
-//block presets will be like 0,0,0,1,1,1,1,0,0,0 (line block)
 //to move blocks will be to add and subtract on the x axis
 //rotating will be difficult but it will pretty much be reseting the preset at a different angle make sure it does'nt collide with other things
 //if a column is all 1's then it dissapears and every column moves down one 
@@ -103,8 +104,16 @@ function copyStuff(grid, thingToPutIn) {
 //   }
 // }
 // trying to make the blocks fall still figure out what i have to change to get the blocks to move
-function keyTyped(){
-  if (key === 'd'){
-    dropper +=1 ;
+// function keyTyped(){
+//   if (key === 'd'){
+//     dropper +=1 ;
+//   }
+// }
+function blocksFall(){
+  while(i <= rows){
+    x += 1;
+  }
+  if (i === 20){
+    clearInterval(interval);
   }
 }
