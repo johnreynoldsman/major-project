@@ -56,9 +56,10 @@ let grid = [
   [0,0,0,0,0,0,0,0,0,0],
   [0,0,0,0,0,0,0,0,0,0]
 ];
+//let aBlock = random(Hero, Teewee, rhodeIslandZ, clevelandZ, orangeRicky, blueRicky, Smashboy);
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  copyStuff(grid, rhodeIslandZ);
+  copyStuff(grid, Hero);
 }
 
 function draw() {
@@ -85,9 +86,6 @@ function showGrid(){
 //rotating will be difficult but it will pretty much be reseting the preset at a different angle make sure it does'nt collide with other things
 //if a column is all 1's then it dissapears and every column moves down one 
 
-//edit mr schellenberg's code possibly to move the blocks down everyonce in awhile
-//acctually make the blocks fall when pressing a button then make it fall without the button and faster with the button 
-
 
 //Mr schellenberg made this function for me...
 function copyStuff(grid, thingToPutIn) {
@@ -109,11 +107,14 @@ function copyStuff(grid, thingToPutIn) {
 //     dropper +=1 ;
 //   }
 // }
-function blocksFall(){
-  while(i <= rows){
-    x += 1;
-  }
-  if (i === 20){
+
+// probably dont use splice instead idk use something else but what?
+function dropBlock(){
+  if (i.floor === 20){
+    i === 0;
     clearInterval(interval);
   }
+  grid.splice(19,1, 1);
+  Hero.push[0,0,0,0,0,0,0,0,0,0];
+  i += 1;
 }
