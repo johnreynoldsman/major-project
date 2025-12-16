@@ -14,6 +14,8 @@ let x;
 let i = 0;
 let cols = 10;
 let rows = 20;
+let Filler = 
+[[0,0,0,0,0,0,0,0,0,0]];
 let Hero = 
   [[0,0,0,1,1,1,1,0,0,0]];
 let Teewee = 
@@ -107,14 +109,5 @@ function copyStuff(grid, thingToPutIn) {
 //     dropper +=1 ;
 //   }
 // }
-
-// probably dont use splice instead idk use something else but what?
 function dropBlock(){
-  if (i.floor === 20){
-    i === 0;
-    clearInterval(interval);
-  }
-  grid.splice(19,1, 1);
-  Hero.push[0,0,0,0,0,0,0,0,0,0];
-  i += 1;
 }
