@@ -67,6 +67,7 @@ function setup() {
 function draw() {
   background(220);
   showGrid();
+  dropBlock();
   //blocksFall(grid, Smashboy);
   // grid.splice(0, 2, Smashboy);
 }
@@ -74,7 +75,7 @@ function showGrid(){
   for(let y = 0; y < rows; y ++){
     for(let x = 0; x < cols ; x ++){
       if(grid[y][x] === 1){
-        fill("black");
+        fill(random(0, 150));
       }
       else if(grid[y][x] === 0){
         fill("white");
@@ -109,5 +110,6 @@ function copyStuff(grid, thingToPutIn) {
 //     dropper +=1 ;
 //   }
 // }
-function dropBlock(){
+function dropBlock(grid){
+  grid.push(Filler);
 }
