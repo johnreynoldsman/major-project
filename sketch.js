@@ -18,6 +18,11 @@ let Filler =
 [[0,0,0,0,0,0,0,0,0,0]];
 let Hero = 
   [[0,0,0,1,1,1,1,0,0,0]];
+let Hero2 =
+[[0,0,0,0,0,1,0,0,0,0,],
+  [0,0,0,0,0,1,0,0,0,0,],
+  [0,0,0,0,0,1,0,0,0,0,],
+  [0,0,0,0,0,1,0,0,0,0,]];
 let Teewee = 
   [[0,0,0,0,1,0,0,0,0,0],
     [0,0,0,1,1,1,0,0,0,0]];
@@ -30,10 +35,10 @@ let rhodeIslandZ =
 let clevelandZ = 
   [[0,0,0,1,1,0,0,0,0,0],
     [0,0,0,0,1,1,0,0,0,0]];
-let orangeRicky = 
+let blueRicky = 
   [[0,0,0,1,1,1,0,0,0,0],
     [0,0,0,1,0,0,0,0,0,0]];
-let blueRicky = 
+let orangeRicky = 
   [[0,0,0,1,1,1,0,0,0,0],
     [0,0,0,0,0,1,0,0,0,0]];
 let grid = [
@@ -61,13 +66,14 @@ let grid = [
 //let aBlock = random(Hero, Teewee, rhodeIslandZ, clevelandZ, orangeRicky, blueRicky, Smashboy);
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  copyStuff(grid, Hero);
+  //noStroke();
+  copyStuff(grid, Hero2);
 }
 
 function draw() {
   background(220);
   showGrid();
-  dropBlock();
+  dropBlock(thingToPutIn);
   //blocksFall(grid, Smashboy);
   // grid.splice(0, 2, Smashboy);
 }
@@ -75,7 +81,7 @@ function showGrid(){
   for(let y = 0; y < rows; y ++){
     for(let x = 0; x < cols ; x ++){
       if(grid[y][x] === 1){
-        fill(random(0, 150));
+        fill(100);
       }
       else if(grid[y][x] === 0){
         fill("white");
@@ -106,10 +112,15 @@ function copyStuff(grid, thingToPutIn) {
 // }
 // trying to make the blocks fall still figure out what i have to change to get the blocks to move
 // function keyTyped(){
-//   if (key === 'd'){
-//     dropper +=1 ;
+//   if (key === 'w'){
+//     ;
 //   }
 // }
-function dropBlock(grid){
-  grid.push(Filler);
+function dropBlock(thingToPutIn){
+  if (thingToPutIn >= rows){
+
+  }
+  else{
+    thingToPutIn
+  }
 }
