@@ -67,13 +67,13 @@ let grid = [
 function setup() {
   createCanvas(windowWidth, windowHeight);
   //noStroke();
-  copyStuff(grid, Hero2);
+  //copyStuff(grid, Hero2);
 }
 
 function draw() {
   background(220);
   showGrid();
-  dropBlock(thingToPutIn);
+  dropBlock(Hero2);
   //blocksFall(grid, Smashboy);
   // grid.splice(0, 2, Smashboy);
 }
@@ -111,16 +111,16 @@ function copyStuff(grid, thingToPutIn) {
 //   }
 // }
 // trying to make the blocks fall still figure out what i have to change to get the blocks to move
-// function keyTyped(){
-//   if (key === 'w'){
-//     ;
-//   }
-// }
-function dropBlock(thingToPutIn){
-  if (thingToPutIn >= rows){
-
-  }
-  else{
-    thingToPutIn
+function keyTyped(){
+  if (key === 'w'){
+    ;
   }
 }
+function dropBlock(grid, thingToPutIn){
+  let size = thingToPutIn.length();
+  for (let y = rows - size;y >= 20; y-= 1){
+    grid[y][x] = 
+
+  }
+}
+//subtract the blocks height to make the blocks fall down fall
