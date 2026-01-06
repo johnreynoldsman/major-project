@@ -73,7 +73,7 @@ function setup() {
 function draw() {
   background(220);
   showGrid();
-  dropBlock(Hero2);
+  copyStuff(grid, Hero2);
   //blocksFall(grid, Smashboy);
   // grid.splice(0, 2, Smashboy);
 }
@@ -90,11 +90,9 @@ function showGrid(){
     }
   }
 }
-
 //to move blocks will be to add and subtract on the x axis
 //rotating will be difficult but it will pretty much be reseting the preset at a different angle make sure it does'nt collide with other things
 //if a column is all 1's then it dissapears and every column moves down one 
-
 
 //Mr schellenberg made this function for me...
 function copyStuff(grid, thingToPutIn) {
@@ -119,8 +117,7 @@ function keyTyped(){
 function dropBlock(grid, thingToPutIn){
   let size = thingToPutIn.length();
   for (let y = rows - size;y >= 20; y-= 1){
-    grid[y][x] = 
-
+    grid[y][x] = thingToPutIn[y][x];
   }
 }
-//subtract the blocks height to make the blocks fall down fall
+//subtract the blocks height to make the blocks fall down
