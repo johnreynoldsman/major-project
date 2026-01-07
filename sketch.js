@@ -115,9 +115,6 @@ function keyTyped(){
   }
 }
 function dropBlock(grid, thingToPutIn){
-  let size = thingToPutIn.length();
-  for (let y = rows - size;y >= 20; y-= 1){
-    grid[y][x] = thingToPutIn[y][x];
-  }
+  
 }
 //subtract the blocks height to make the blocks fall down
