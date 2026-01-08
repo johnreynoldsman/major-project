@@ -114,7 +114,6 @@ function keyTyped(){
     ;
   }
 }
-function dropBlock(grid, thingToPutIn){
-  
+function dropBlock(){
 }
 //subtract the blocks height to make the blocks fall down
