@@ -7,7 +7,8 @@
 
 const cellsize = 40;
 let interval = setInterval(dropBlock, 500);
-let y;
+let currentY = 0;
+let currentX= 0;
 let dy = 1;
 //let dropper = 10;
 let x;
@@ -67,13 +68,15 @@ let grid = [
 function setup() {
   createCanvas(windowWidth, windowHeight);
   //noStroke();
-  //copyStuff(grid, Hero2);
+  copyStuff(grid, Hero2, currentX, currentY);
+  dropBlock(copyStuff, currentY);
+  
 }
 
 function draw() {
   background(220);
+  // copyStuff(grid, Hero2);
   showGrid();
-  copyStuff(grid, Hero2);
   //blocksFall(grid, Smashboy);
   // grid.splice(0, 2, Smashboy);
 }
@@ -95,11 +98,11 @@ function showGrid(){
 //if a column is all 1's then it dissapears and every column moves down one 
 
 //Mr schellenberg made this function for me...
-function copyStuff(grid, thingToPutIn) {
+function copyStuff(grid, thingToPutIn, currentX, currentY) {
   let rowsToCopy = thingToPutIn.length;
-  for (let y = 0; y < rowsToCopy; y++) {
-    for (let x = 0; x < cols; x++) {
-      grid[y][x] = thingToPutIn[y][x];
+  for (let y = currentY; y < rowsToCopy + currentY; y++) {
+    for (let x = currentX; x < cols; x++) {
+      grid[y][x] = thingToPutIn[y - currentY][x - currentX];
     }
   }
 }
@@ -114,6 +117,7 @@ function keyTyped(){
     ;
   }
 }
-function dropBlock(){
+function dropBlock(currentY){
+  currentY+=1;
 }
 //subtract the blocks height to make the blocks fall down
