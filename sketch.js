@@ -6,7 +6,7 @@
 // - describe what you did to take this project "above and beyond"
 
 const cellsize = 40;
-let interval = setInterval(dropBlock, 500);
+// let interval = setInterval(dropBlock, 500);
 let currentY = 0;
 let currentX= 0;
 let dy = 1;
@@ -69,8 +69,8 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   //noStroke();
   copyStuff(grid, Hero2, currentX, currentY);
-  dropBlock(copyStuff, currentY);
-  
+  dropBlock(currentX, currentY);
+  setInterval(dropBlock, 750);
 }
 
 function draw() {
@@ -84,7 +84,7 @@ function showGrid(){
   for(let y = 0; y < rows; y ++){
     for(let x = 0; x < cols ; x ++){
       if(grid[y][x] === 1){
-        fill(100);
+        fill(127.5);
       }
       else if(grid[y][x] === 0){
         fill("white");
@@ -113,11 +113,21 @@ function copyStuff(grid, thingToPutIn, currentX, currentY) {
 // }
 // trying to make the blocks fall still figure out what i have to change to get the blocks to move
 function keyTyped(){
-  if (key === 'w'){
-    ;
+  if (key === 'a'){
+    currentX -= 1;
+  }
+  if (key === 'd'){
+    currentX += 1;
+  }
+  if (key === 's'){
+    currentY += 1;
   }
 }
-function dropBlock(currentY){
-  currentY+=1;
+function dropBlock(){
+  console.log(currentY);
+  if (currentY <= 15){
+    currentY += 1;  
+  }
+  copyStuff(grid, Hero2, currentX, currentY);
 }
 //subtract the blocks height to make the blocks fall down
