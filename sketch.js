@@ -1,9 +1,6 @@
 // tetris like project
 // Lacon.R
 // Nov 20th
-//
-// Extra for Experts:
-// - describe what you did to take this project "above and beyond"
 
 const cellsize = 40;
 // let interval = setInterval(dropBlock, 500);
@@ -68,8 +65,8 @@ let grid = [
 function setup() {
   createCanvas(windowWidth, windowHeight);
   //noStroke();
-  copyStuff(grid, Hero2, currentX, currentY);
-  dropBlock(currentX, currentY);
+  //copyStuff(grid, Hero2, currentX, currentY);
+  dropBlock();
   setInterval(dropBlock, 750);
 }
 
@@ -125,9 +122,9 @@ function keyTyped(){
 }
 function dropBlock(){
   console.log(currentY);
-  if (currentY <= 15){
-    currentY += 1;  
+  if (currentY <= grid.length - Teewee.length){
+    currentY += 2;  
   }
-  copyStuff(grid, Hero2, currentX, currentY);
+  copyStuff(grid, Teewee, currentX, currentY);
 }
 //subtract the blocks height to make the blocks fall down
