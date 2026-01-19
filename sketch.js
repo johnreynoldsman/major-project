@@ -1,6 +1,8 @@
 // tetris like project
 // Lacon.R
-// Nov 20th
+// Nov 20th - Jan 19th
+
+//i just wish i could have worked on this at home
 
 const cellsize = 40;
 // let interval = setInterval(dropBlock, 500);
